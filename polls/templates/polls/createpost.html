@@ -1,0 +1,15 @@
+{% extends 'polls/main.html' %}
+{% block content%}
+<div class="row">
+    <div class="col-md-6 mx-auto mt-2">
+        <div class="card card-body">
+            <h5 class="lead">Create Your Poll📜</h5>
+            <form method="POST" action="" enctype="multipart/form-data">
+                {%csrf_token%}
+               <div class="lead">{{form.as_p}}</div>
+                <input class="btn btn-primary" type="submit" name="Update Information">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}

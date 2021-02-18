@@ -1,0 +1,36 @@
+{% extends 'polls/main.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 ml-5 mt-3">
+        <div class="card">
+            <div class="card-header bg-warning display-4">{{post}}</div>  
+        </div>
+             {% for comment in comments%}
+             <div class="card m-2">
+                  <div class="card-title">
+                    <span class="lead m-2">Posted By:</span>{{comment.user}}
+                </div>
+                <div class="card-body m-2">
+                    {{comment.body}}
+                </div>
+               
+             </div>
+             {%endfor%}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 ml-auto mr-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="lead">Write a Comment <span class="m-2 "><i class="far fa-comments"></i></span></h5>
+                <form method="POST" action="{% url 'blog-comment' post.id %}">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <input class="btn btn-primary" type="submit" name="comment">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

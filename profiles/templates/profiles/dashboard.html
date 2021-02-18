@@ -1,0 +1,48 @@
+{% extends 'polls/main.html'%}
+
+ {% block content%}
+<section id="posts">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mt-2">
+          <div class="card">
+            <div class="card-header">
+              <h4>Latest Polls</h4>
+            </div>
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+               <tbody>
+             {% for i in posts%}
+              <tr> 
+                <td>{{i.content}}</td>
+                <td>{{i.catagory}}</td>
+                <td>{{i.created}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+           
+            </table>
+          </div>
+        </div>
+        <div class="col-md-3 mt-2">
+          <div class="card text-center bg-primary text-white mb-3">
+            <div class="card-body">
+              <h3>My Polls</h3>
+              <h4 class="display-4">
+                <i class="fas fa-pencil-alt"></i>{{posts.count}}
+              </h4>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock%}
