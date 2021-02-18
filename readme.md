@@ -21,5 +21,4 @@
 ### python manage.py runserver (enjoy the app 🎆)
 
 ### admin url- localhost/admin,127.0.0.1:8000/admin
-#### admin username = subhrajyoti
-#### admin password = subhra1234
+
